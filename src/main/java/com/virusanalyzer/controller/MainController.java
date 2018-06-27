@@ -55,6 +55,7 @@ public class MainController implements Initializable {
     @FXML
     void scan(MouseEvent event) {
         ReportGenerator.clear();
+        ReportGenerator.writeOnReport("Scanning file = " + file.getName());
         ExtensionScanner.extensionScan(path);
         HashScanner.getHashScanner().checkHash(path);
         txtArea.setText(ReportGenerator.generateReport());
